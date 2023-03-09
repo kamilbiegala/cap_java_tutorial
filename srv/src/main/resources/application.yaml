@@ -1,0 +1,33 @@
+---
+spring:
+  config.activate.on-profile: default
+logging:
+  level:
+    web: DEBUG
+cds:
+  datasource:
+    auto-config.enabled: false
+  security:
+    mock:
+      defaultUsers: false
+      users:
+        - name: klaus
+          password: pass_klaus
+          additional:
+            firstName: Klaus
+            lastName: Sussard
+            email: Klaus.Sussard@mail.com
+        - name: mia
+          password: pass_mia
+          additional:
+            firstName: Mia
+            lastName: Bonnellac
+            email: Mia.Bonnellac@mail.com
+        - name: sabine
+          password: pass_sabine
+          roles:
+            - Administrators
+          additional:
+            firstName: Sabine
+            lastName: Autumnpike
+            email: Sabine.Autumnpike@mail.com 
