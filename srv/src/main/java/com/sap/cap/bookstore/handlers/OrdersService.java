@@ -44,7 +44,7 @@ public class OrdersService implements EventHandler {
             // check if the book that should be ordered is existing
             CqnSelect sel = Select.from(Books_.class).columns(Books_::stock).where(b -> b.ID().eq(bookId));
             Books book = db.run(sel).first(Books.class)
-                    .orElseThrow(() -> new ServiceException(ErrorStatuses.NOT_FOUND, "Book does not exist!"));
+                    .orElseThrow(() -> new ServiceException(ErrorStatuses.NOT_FOUND, "Book does not exist"));
 
             // check if order could be fulfilled
             int stock = book.getStock();
